@@ -27,7 +27,7 @@ export async function scanWithPuppeteer(
       try {
         response = await page.goto(url, {
           waitUntil: "load",
-          timeout: 30000,
+          timeout: 60000,
         });
       } catch (gotoError) {
         console.warn(
