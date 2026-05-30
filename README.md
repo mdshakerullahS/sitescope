@@ -1,5 +1,7 @@
 # SiteScope — Website Analyzer
 
+> **Live Demo:** [https://sitescope-qbdf.onrender.com](https://sitescope-qbdf.onrender.com)
+
 A full-stack website auditing tool that runs a real headless browser against any URL and surfaces issues across performance, SEO, accessibility, security, UX, and conversion — with specific fixes, not vague advice.
 
 Built with Next.js, Puppeteer, Lighthouse, and a custom rules engine. Designed to be self-hosted and deployable in minutes.
