@@ -9,8 +9,7 @@ import {
 import { pool } from "@/lib/browser-pool";
 import { lighthouseQueue } from "@/lib/lighthouse-queue";
 import { AnalysisResult } from "@/types";
-
-export const maxDuration = 120;
+import { redis } from "@/lib/redis";
 
 function normalizeUrl(raw: string): string {
   let url = raw.trim();
@@ -35,6 +34,9 @@ export async function POST(req: NextRequest) {
         { status: 400 },
       );
     }
+
+    const cachedResult = await redis.get<AnalysisResult>(url);
+    if (cachedResult) return NextResponse.json(cachedResult);
 
     // Log queue state on every incoming request
     console.log(`[analyze] Incoming request for ${url}`, {
@@ -64,6 +66,8 @@ export async function POST(req: NextRequest) {
       summary,
       topWins,
     };
+
+    await redis.set<AnalysisResult>(url, result, 300);
 
     return NextResponse.json(result);
   } catch (err: unknown) {
