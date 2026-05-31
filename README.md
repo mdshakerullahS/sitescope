@@ -24,6 +24,7 @@ Built with Next.js, Puppeteer, Lighthouse, and a custom rules engine. Designed t
 | Custom rules       | TypeScript rules engine (UX + Conversion) |
 | Concurrency        | Browser pool + Lighthouse queue           |
 | Report export      | jsPDF (PDF), CSV, JSON                    |
+| Report Caching     | Redis                                     |
 
 ---
 
@@ -133,6 +134,7 @@ src/
 │   ├── browser-pool.ts             # Reusable Puppeteer browser pool
 │   ├── custom-rules.ts             # 30+ audit rules + score calculation
 │   ├── pdf-generator.ts            # jsPDF multi-page report generator
+│   ├── redis.ts                    # Cache report for faster result
 │   └── download-utils.ts           # CSV + JSON export helpers
 └── types/index.ts                  # Shared TypeScript interfaces
 ```
