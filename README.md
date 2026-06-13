@@ -8,9 +8,21 @@ Built with Next.js, Puppeteer, Lighthouse, and a custom rules engine. Designed t
 
 ---
 
-## Screenshot
+## Preview
 
-![SiteScope Report](./screenshot.png)
+<details>
+<summary>Homepage</summary>
+
+![SiteScope Report](./Homepage.png)
+
+</details>
+
+<details>
+<summary>Report</summary>
+
+![SiteScope Report](./Report_Page.png)
+
+</details>
 
 ---
 
